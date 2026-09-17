@@ -46,37 +46,37 @@ export default async function TaskDetailPage({ params }: TaskDetailPageProps) {
   }
 
   return (
-    <main className="min-h-screen bg-gray-50">
-      <div className="mx-auto max-w-3xl p-8">
+    <main className="min-h-screen bg-[#fbfaf8] text-[#1e2933]">
+      <div className="mx-auto max-w-3xl px-6 py-10 lg:px-8">
         {/* Back */}
         <Link
           href="/dashboard"
-          className="text-sm font-medium text-gray-600 hover:text-black"
+          className="text-sm font-semibold text-[#52735e] hover:text-[#1e2933]"
         >
           ← Back to Dashboard
         </Link>
 
         {/* Task */}
-        <div className="mt-6 rounded-xl border bg-white p-6 shadow-sm">
+        <div className="mt-6 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm shadow-slate-900/5">
           {/* Header */}
           <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
             <div>
               <h1
                 className={`text-2xl font-bold ${
                   task.completed
-                    ? "text-gray-400 line-through"
-                    : "text-gray-900"
+                    ? "text-slate-400 line-through"
+                    : "text-[#1e2933]"
                 }`}
               >
                 {task.title}
               </h1>
 
               {task.completed ? (
-                <span className="mt-3 inline-block rounded-full bg-green-100 px-3 py-1 text-sm font-medium text-green-700">
+                <span className="mt-3 inline-block rounded-full bg-[#e8f1e9] px-3 py-1 text-sm font-semibold text-[#52735e]">
                   Completed
                 </span>
               ) : (
-                <span className="mt-3 inline-block rounded-full bg-yellow-100 px-3 py-1 text-sm font-medium text-yellow-700">
+                <span className="mt-3 inline-block rounded-full bg-[#f7f1df] px-3 py-1 text-sm font-semibold text-[#8a6b25]">
                   Pending
                 </span>
               )}
@@ -85,16 +85,16 @@ export default async function TaskDetailPage({ params }: TaskDetailPageProps) {
 
           {/* Description */}
           <div className="mt-8">
-            <h2 className="text-sm font-medium text-gray-500">Description</h2>
+            <h2 className="text-sm font-medium text-slate-500">Description</h2>
 
-            <p className="mt-2 whitespace-pre-wrap text-gray-700">
+            <p className="mt-2 whitespace-pre-wrap text-slate-700">
               {task.description || "No description provided."}
             </p>
           </div>
 
           {/* Created */}
           <div className="mt-8 border-t pt-6">
-            <p className="text-sm text-gray-500">
+            <p className="text-sm text-slate-500">
               Created {new Date(task.created_at).toLocaleString()}
             </p>
           </div>
@@ -103,7 +103,7 @@ export default async function TaskDetailPage({ params }: TaskDetailPageProps) {
           <div className="mt-6 flex gap-2">
             <Link
               href={`/dashboard/tasks/${task.id}/edit`}
-              className="rounded-lg bg-black px-4 py-2 text-sm font-medium text-white hover:bg-gray-800"
+              className="rounded-full bg-[#1e2933] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#33414c]"
             >
               Edit Task
             </Link>

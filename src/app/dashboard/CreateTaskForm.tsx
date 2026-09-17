@@ -9,7 +9,6 @@ import { emptyFieldErrors, type TaskFormState } from "@/lib/validation";
 
 const initialState: TaskFormState = {
   error: "",
-  success: "",
   fieldErrors: emptyFieldErrors,
 };
 
@@ -19,18 +18,18 @@ export default function CreateTaskForm() {
   return (
     <form
       action={formAction}
-      className="mt-8 space-y-4 rounded-xl border bg-white p-6 shadow-sm"
+      className="mt-8 space-y-5 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm shadow-slate-900/5"
     >
       <div>
-        <h2 className="text-xl font-semibold">Add Task</h2>
+        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#63816d]">Capture a task</p><h2 className="mt-2 text-xl font-semibold">What needs your attention?</h2>
 
-        <p className="mt-1 text-sm text-gray-500">
+        <p className="mt-1 text-sm text-slate-500">
           Create a new task to keep track of your work.
         </p>
       </div>
 
       <div>
-        <label htmlFor="title" className="mb-1 block text-sm font-medium">
+        <label htmlFor="title" className="mb-1.5 block text-sm font-medium text-slate-700">
           Title
         </label>
 
@@ -42,7 +41,7 @@ export default function CreateTaskForm() {
           minLength={3}
           maxLength={100}
           required
-          className="w-full rounded-lg border px-3 py-2 outline-none focus:border-black"
+          className="w-full rounded-xl border border-slate-200 px-3.5 py-3 outline-none transition focus:border-[#6a9077] focus:ring-4 focus:ring-[#e8f1e9]"
         />
 
         {state.fieldErrors.title && (
@@ -51,7 +50,7 @@ export default function CreateTaskForm() {
       </div>
 
       <div>
-        <label htmlFor="description" className="mb-1 block text-sm font-medium">
+        <label htmlFor="description" className="mb-1.5 block text-sm font-medium text-slate-700">
           Description
         </label>
 
@@ -61,7 +60,7 @@ export default function CreateTaskForm() {
           placeholder="Description"
           maxLength={500}
           rows={4}
-          className="w-full rounded-lg border px-3 py-2 outline-none focus:border-black"
+          className="w-full rounded-xl border border-slate-200 px-3.5 py-3 outline-none transition focus:border-[#6a9077] focus:ring-4 focus:ring-[#e8f1e9]"
         />
 
         {state.fieldErrors.description && (
@@ -75,7 +74,7 @@ export default function CreateTaskForm() {
 
       <SubmitButton
         pendingText="Adding..."
-        className="rounded-lg bg-black px-4 py-2 text-white hover:bg-gray-800"
+        className="rounded-full bg-[#1e2933] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#33414c]"
       >
         Add Task
       </SubmitButton>

@@ -30,7 +30,6 @@ export async function createTask(
   if (!user) {
     return {
       error: "You must be logged in.",
-      success: "",
       fieldErrors: emptyFieldErrors,
     };
   }
@@ -59,7 +58,6 @@ export async function createTask(
 
     return {
       error: "Please fix the errors below.",
-      success: "",
       fieldErrors,
     };
   }
@@ -75,7 +73,6 @@ export async function createTask(
   if (error) {
     return {
       error: error.message,
-      success: "",
       fieldErrors: emptyFieldErrors,
     };
   }
@@ -98,7 +95,6 @@ export async function updateTask(
   if (!user) {
     return {
       error: "You must be logged in.",
-      success: "",
       fieldErrors: emptyFieldErrors,
     };
   }
@@ -110,7 +106,6 @@ export async function updateTask(
   if (!Number.isInteger(taskId)) {
     return {
       error: "Invalid task ID.",
-      success: "",
       fieldErrors: emptyFieldErrors,
     };
   }
@@ -139,7 +134,6 @@ export async function updateTask(
 
     return {
       error: "Please fix the errors below.",
-      success: "",
       fieldErrors,
     };
   }
@@ -156,7 +150,6 @@ export async function updateTask(
   if (error) {
     return {
       error: error.message,
-      success: "",
       fieldErrors: emptyFieldErrors,
     };
   }

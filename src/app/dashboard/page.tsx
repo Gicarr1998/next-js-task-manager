@@ -123,31 +123,32 @@ export default async function DashboardPage({
   const totalPages = Math.ceil((count ?? 0) / pageSize);
 
   return (
-    <main className="min-h-screen bg-gray-50">
+    <main className="min-h-screen bg-[#fbfaf8] text-[#1e2933]">
       <TaskToast />
 
       <Navbar email={user.email ?? ""} />
 
-      <div className="mx-auto max-w-3xl p-8">
+      <div className="mx-auto max-w-5xl px-6 py-10 lg:px-8">
+        <div className="mb-10"><p className="text-sm font-semibold uppercase tracking-[0.16em] text-[#63816d]">Your workspace</p><h1 className="mt-2 text-3xl font-semibold tracking-tight sm:text-4xl">A clear plan for today.</h1></div>
         {/* Statistics */}
         <div className="mb-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
           {/* Total */}
-          <div className="rounded-xl border bg-white p-5 shadow-sm">
-            <p className="text-sm font-medium text-gray-500">Total Tasks</p>
+          <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm shadow-slate-900/5">
+            <p className="text-sm font-medium text-slate-500">Total tasks</p>
 
             <p className="mt-2 text-3xl font-bold">{totalTaskCount}</p>
           </div>
 
           {/* Completed */}
-          <div className="rounded-xl border bg-white p-5 shadow-sm">
-            <p className="text-sm font-medium text-gray-500">Completed</p>
+          <div className="rounded-2xl border border-slate-200 bg-[#eaf2eb] p-5 shadow-sm shadow-slate-900/5">
+            <p className="text-sm font-medium text-[#52735e]">Completed</p>
 
             <p className="mt-2 text-3xl font-bold">{completedTaskCount}</p>
           </div>
 
           {/* Pending */}
-          <div className="rounded-xl border bg-white p-5 shadow-sm">
-            <p className="text-sm font-medium text-gray-500">Pending</p>
+          <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm shadow-slate-900/5">
+            <p className="text-sm font-medium text-slate-500">In progress</p>
 
             <p className="mt-2 text-3xl font-bold">{pendingTaskCount}</p>
           </div>

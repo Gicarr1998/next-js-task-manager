@@ -15,7 +15,6 @@ export const taskSchema = z.object({
 
 export type TaskFormState = {
   error: string;
-  success: string;
   fieldErrors: {
     title: string;
     description: string;
