@@ -17,6 +17,7 @@ type EditTaskFormProps = {
 
 const initialState: TaskFormState = {
   error: "",
+  success: "",
   fieldErrors: emptyFieldErrors,
 };
 
